@@ -6,12 +6,10 @@ public class BroadcastAddress {
 
    private String interfaceName;
    private InetAddress address;
-   private boolean enabled = true;
 
-   public BroadcastAddress(String interfaceName, InetAddress address, boolean enabled) {
+   public BroadcastAddress(String interfaceName, InetAddress address) {
       this.interfaceName = interfaceName;
       this.address = address;
-      this.enabled = enabled;
    }
 
    public String getInterfaceName() {
@@ -30,12 +28,8 @@ public class BroadcastAddress {
       this.address = address;
    }
 
-   public boolean isEnabled() {
-      return enabled;
+   @Override
+   public String toString() {
+      return address.getHostAddress();
    }
-
-   public void setEnabled(boolean enabled) {
-      this.enabled = enabled;
-   }
-
 }
